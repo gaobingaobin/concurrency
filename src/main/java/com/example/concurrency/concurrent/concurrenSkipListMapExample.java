@@ -1,22 +1,20 @@
-package com.example.concurrency.controller;
+package com.example.concurrency.concurrent;
 
-import com.example.concurrency.annoations.NoThreadSafe;
+import com.example.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
+import java.util.concurrent.*;
+
 @Slf4j
-@NoThreadSafe
-public class ConcurrencyTest {
+@ThreadSafe
+public class concurrenSkipListMapExample {
 
     /** 请求总数*/
     private static int clientTotal = 5000;
     /** 同时并发执行的线程数*/
     private static int ThreadTotal = 200;
 
-    private static int count = 0;
+    private static ConcurrentSkipListMap<Integer,Integer> list = new ConcurrentSkipListMap<>();
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -25,10 +23,11 @@ public class ConcurrencyTest {
         final Semaphore semaphore = new Semaphore(ThreadTotal);
         final CountDownLatch countDownLatch = new CountDownLatch(clientTotal);
         for(int i=0;i<clientTotal;i++){
+            final int count = i;
             executorService.execute(() ->{
                 try {
                     semaphore.acquire();
-                    add();
+                    update(count);
                     semaphore.release();
                 }catch (Exception e){
                     log.error("exception",e);
@@ -38,12 +37,12 @@ public class ConcurrencyTest {
         }
         countDownLatch.await();
         executorService.shutdown();
-        log.info("count:{}",count);
+        log.info("count:{}",list.size());
 
 
     }
-
-    private synchronized static int add(){
-        return count++;
+   /** 方法只执行一次*/
+    private static void update(int i){
+        list.put(i,i);
     }
 }
