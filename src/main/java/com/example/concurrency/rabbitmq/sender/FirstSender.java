@@ -21,9 +21,14 @@ public class FirstSender {
      * @param uuid
      * @param message  消息
      */
-    public void send(String uuid,Object message) {
+    public void send1(String uuid,Object message) {
         CorrelationData correlationId = new CorrelationData(uuid);
-        rabbitTemplate.convertAndSend(RabbitMqConfig.EXCHANGE, RabbitMqConfig.ROUTINGKEY2,
+        rabbitTemplate.convertAndSend(RabbitMqConfig.EXCHANGE, "queue_one_key1",
+                message, correlationId);
+    }
+    public void send2(String uuid,Object message) {
+        CorrelationData correlationId = new CorrelationData(uuid);
+        rabbitTemplate.convertAndSend(RabbitMqConfig.EXCHANGE, "queue_one_key2",
                 message, correlationId);
     }
 

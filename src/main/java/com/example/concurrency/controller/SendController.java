@@ -20,7 +20,8 @@ public class SendController {
     @RequestMapping("/send")
     public String send(String message) {
         String uuid = UUID.randomUUID().toString();
-        firstSender.send(uuid, message);
+        firstSender.send1(uuid, message);
+        firstSender.send2(uuid, message);
         return uuid;
     }
 }

@@ -18,7 +18,7 @@ public class ConcurrencyApplicationTests {
     @Test
     public void contextLoads() {
         String uuid = UUID.randomUUID().toString();
-        firstSender.send(uuid, "你好！");
+        firstSender.send1(uuid, "你好！");
     }
 
 }

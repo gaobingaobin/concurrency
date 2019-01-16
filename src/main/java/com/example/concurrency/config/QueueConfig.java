@@ -18,7 +18,7 @@ public class QueueConfig {
         return new Queue("first-queue",true,false,false);
     }
     public Queue secondQueue(){
-        return new Queue("first-queue",true,false,false);
+        return new Queue("second-queue",true,false,false);
     }
 
 }
