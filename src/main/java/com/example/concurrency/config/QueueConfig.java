@@ -1,4 +1,4 @@
-package rabbitmq.config;
+package com.example.concurrency.config;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Configuration;

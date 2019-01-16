@@ -1,4 +1,4 @@
-package rabbitmq.config;
+package com.example.concurrency.config;
 
 
 import org.springframework.amqp.core.Binding;
@@ -8,8 +8,8 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import rabbitmq.mqcallbck.MsgSendConfirmCallBack;
-import rabbitmq.mqcallbck.MsgSendReturnCallback;
+import com.example.concurrency.rabbitmq.mqcallbck.MsgSendConfirmCallBack;
+import com.example.concurrency.rabbitmq.mqcallbck.MsgSendReturnCallback;
 
 /**
  * RabbitMq配置

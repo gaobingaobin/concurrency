@@ -1,17 +1,17 @@
-package rabbitmq.sender;
+package com.example.concurrency.rabbitmq.sender;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.support.CorrelationData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import rabbitmq.RabbitMqConfig;
+import com.example.concurrency.config.RabbitMqConfig;
+
 /**
 * @Description: 生产者
 * @author gaobin
 * @createDate 2019/1/16 16:07
 */
-@Slf4j
+
 @Component
 public class FirstSender {
     @Autowired

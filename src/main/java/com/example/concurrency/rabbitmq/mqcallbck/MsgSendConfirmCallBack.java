@@ -1,8 +1,12 @@
-package rabbitmq.mqcallbck;
+package com.example.concurrency.rabbitmq.mqcallbck;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.support.CorrelationData;
-
+/**
+* @Description:
+* @author gaobin
+* @createDate 2019/1/16 18:00
+*/
 public class MsgSendConfirmCallBack implements RabbitTemplate.ConfirmCallback {
     @Override
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
