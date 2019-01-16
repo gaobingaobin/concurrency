@@ -1,4 +1,4 @@
-package com.example.concurrency.controller;
+package controller;
 
 import com.example.concurrency.utils.RedisUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-@Controller
 @Slf4j
+@Controller
 public class TestController {
     @Autowired
     private RedisUtils redisUtils;

@@ -1,13 +1,9 @@
-package syncContainer;
+package com.example.concurrency.syncContainer;
 
 import com.example.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Hashtable;
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -15,14 +11,14 @@ import java.util.concurrent.Semaphore;
 
 @Slf4j
 @ThreadSafe
-public class CollectionsListExample {
+public class HashTableExample {
 
     /** 请求总数*/
     private static int clientTotal = 5000;
     /** 同时并发执行的线程数*/
     private static int ThreadTotal = 200;
 
-    private static List<Integer> list = Collections.synchronizedList(new ArrayList<>());
+    private static Hashtable<Integer,Integer> list = new Hashtable<>();
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -51,6 +47,6 @@ public class CollectionsListExample {
     }
    /** 方法只执行一次*/
     private static void update(int i){
-        list.add(i);
+        list.put(i,i);
     }
 }

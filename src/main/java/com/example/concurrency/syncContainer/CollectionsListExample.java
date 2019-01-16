@@ -1,26 +1,26 @@
-package syncContainer;
+package com.example.concurrency.syncContainer;
 
-import com.example.concurrency.annoations.NoThreadSafe;
 import com.example.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
 @ThreadSafe
-public class VectorExample {
+public class CollectionsListExample {
 
     /** 请求总数*/
     private static int clientTotal = 5000;
     /** 同时并发执行的线程数*/
     private static int ThreadTotal = 200;
 
-    private static Vector<Integer> list = new Vector();
+    private static List<Integer> list = Collections.synchronizedList(new ArrayList<>());
 
     public static void main(String[] args) throws InterruptedException {
 

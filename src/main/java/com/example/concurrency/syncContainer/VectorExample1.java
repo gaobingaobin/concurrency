@@ -1,14 +1,10 @@
-package syncContainer;
+package com.example.concurrency.syncContainer;
 
 import com.example.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Iterator;
 import java.util.Vector;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
 
 @Slf4j
 @ThreadSafe

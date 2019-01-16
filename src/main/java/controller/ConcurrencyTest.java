@@ -1,4 +1,4 @@
-package com.example.concurrency.controller;
+package controller;
 
 import com.example.concurrency.annoations.NoThreadSafe;
 import lombok.extern.slf4j.Slf4j;

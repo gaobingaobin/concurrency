@@ -1,9 +1,8 @@
-package syncContainer;
+package com.example.concurrency.syncContainer;
 
 import com.example.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Hashtable;
 import java.util.Vector;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -12,14 +11,14 @@ import java.util.concurrent.Semaphore;
 
 @Slf4j
 @ThreadSafe
-public class HashTableExample {
+public class VectorExample {
 
     /** 请求总数*/
     private static int clientTotal = 5000;
     /** 同时并发执行的线程数*/
     private static int ThreadTotal = 200;
 
-    private static Hashtable<Integer,Integer> list = new Hashtable<>();
+    private static Vector<Integer> list = new Vector();
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -48,6 +47,6 @@ public class HashTableExample {
     }
    /** 方法只执行一次*/
     private static void update(int i){
-        list.put(i,i);
+        list.add(i);
     }
 }
