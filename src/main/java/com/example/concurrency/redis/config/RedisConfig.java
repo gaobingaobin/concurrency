@@ -1,4 +1,4 @@
-package com.example.concurrency.config;
+package com.example.concurrency.redis.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

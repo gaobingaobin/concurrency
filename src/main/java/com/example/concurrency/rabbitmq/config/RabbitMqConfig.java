@@ -1,4 +1,4 @@
-package com.example.concurrency.config;
+package com.example.concurrency.rabbitmq.config;
 
 
 import org.springframework.amqp.core.Binding;
