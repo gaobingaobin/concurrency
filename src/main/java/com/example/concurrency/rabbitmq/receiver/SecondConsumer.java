@@ -1,6 +1,5 @@
 package com.example.concurrency.rabbitmq.receiver;
 
-import com.example.concurrency.config.RabbitMqConfig;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
