@@ -4,7 +4,7 @@ import com.example.concurrency.annoations.ThreadSafe;
 import com.sun.org.apache.bcel.internal.classfile.InnerClass;
 
 /**
- * 线程安全的 双重检测锁机制 懒汉单例模式实现方式
+ * 线程安全的 静态内部类 懒汉单例模式实现方式
  */
 @ThreadSafe
 public class SingleExample3 {

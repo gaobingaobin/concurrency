@@ -59,11 +59,11 @@ public class LockExample {
     }
    /** 方法只执行一次*/
     private static void update(int i){
-        lock.lock();
+//        lock.lock();
         try {
             list.add(i);
         }finally {
-            lock.unlock();
+//            lock.unlock();
 
         }
 

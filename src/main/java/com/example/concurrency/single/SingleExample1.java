@@ -1,11 +1,11 @@
 package com.example.concurrency.single;
 
-import com.example.concurrency.annoations.NoThreadSafe;
+import com.example.concurrency.annoations.ThreadSafe;
 
 /**
  * 线程安全的同步懒汉单例模式实现方式
  */
-@NoThreadSafe
+@ThreadSafe
 public class SingleExample1 {
     //一个静态实例
     private static SingleExample1 singleExample;
