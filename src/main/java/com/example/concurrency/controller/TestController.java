@@ -14,16 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Slf4j
 @Controller
 public class TestController {
+
     @Autowired
     private RedisUtils redisUtils;
     @Autowired
     private UserService userService;
-
-    @RequestMapping("/test")
-    @ResponseBody
-    public String test(){
-        return "test";
-    }
 
     @RequestMapping("/get")
     @ResponseBody

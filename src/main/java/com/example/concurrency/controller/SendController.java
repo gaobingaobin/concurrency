@@ -23,4 +23,5 @@ public class SendController {
         firstSender.send1(uuid, message);
         return uuid;
     }
+
 }
