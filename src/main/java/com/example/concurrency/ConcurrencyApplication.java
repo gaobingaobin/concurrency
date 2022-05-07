@@ -14,6 +14,8 @@ public class ConcurrencyApplication implements InitializingBean {
     private final ProfileProperties profileProperties;
 
     public static void main(String[] args) {
+        /** elasticsearch 启动报错 */
+        System.setProperty("es.set.netty.runtime.available.processors", "false");
         SpringApplication.run(ConcurrencyApplication.class, args);
     }
 
@@ -32,5 +34,6 @@ public class ConcurrencyApplication implements InitializingBean {
         System.out.println(library.getBooks());
         System.out.println(profileProperties.getEmail());
     }
+
 
 }

@@ -9,14 +9,14 @@ import java.util.concurrent.FutureTask;
  * @Author gaobin
  * @Date 2022-05-05 20:45
  */
-public class CallTest implements Callable {
+public class CallableTest implements Callable {
     @Override
     public Object call() throws Exception {
         return "Hello World";
     }
 
     public static void main(String[] args) {
-        FutureTask<String> task = new FutureTask<String>(new CallTest());
+        FutureTask<String> task = new FutureTask<String>(new CallableTest());
         new Thread(task).start();
 
         try {

@@ -22,8 +22,12 @@ public class Result<T> {
     public static <T> Result<T> success(T data){
         return new Result<T>(data);
     }
+
     public static <T> Result<T> error(CodeMsg msg){
         return new Result<T>(msg);
+    }
+    public static <T> Result<T> error(){
+        return new Result<T>(CodeMsg.SERVER_ERROR);
     }
     public int getCode() {
         return code;

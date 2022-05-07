@@ -19,7 +19,7 @@ import java.util.Date;
 @Data
 @Accessors(chain = true)
 @Document(indexName = "blog", type = "java")
-public class BolgModel implements Serializable {
+public class BlogModel implements Serializable {
 
     private static final long serialVersionUID = 6320548148250372657L;
     @Id
