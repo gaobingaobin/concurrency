@@ -117,30 +117,30 @@ public class ReadFile {
             this.medias = medias;
         }
 
-//        public  void writeMyql(){
-//            System.out.println("消费者线程 - " + Thread.currentThread().getName() + "启动");
-//            int i = 0;
-//            long start = System.currentTimeMillis(); // 记录起始时间
-//            //Thread.sleep(3);  //用于测试当生产者生产满10个食品后是否进入等待状态
-//            try {
-//                while (flag){
-//                    String media = medias.take();
-//                    if("end".equals(media)){
-//                        flag = false;
-//                        medias.put("end");//将结束标志放进队列  以防别的消费者线程看不到
-//
-//                    }else{
-//                        log.info(media);
-//                        ++i;
-//                    }
-//
-//                }//while
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//            long end = System.currentTimeMillis();
-//            log.info("消费者线程{}结束,消费数据{},时间：{}",Thread.currentThread().getName(),i,(end-start)/1000);
-//        }
+        public  void writeMyql(){
+            System.out.println("消费者线程 - " + Thread.currentThread().getName() + "启动");
+            int i = 0;
+            long start = System.currentTimeMillis(); // 记录起始时间
+            //Thread.sleep(3);  //用于测试当生产者生产满10个食品后是否进入等待状态
+            try {
+                while (flag){
+                    String media = medias.take();
+                    if("end".equals(media)){
+                        flag = false;
+                        medias.put("end");//将结束标志放进队列  以防别的消费者线程看不到
+
+                    }else{
+                        log.info(media);
+                        ++i;
+                    }
+
+                }//while
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            long end = System.currentTimeMillis();
+            log.info("消费者线程{}结束,消费数据{},时间：{}",Thread.currentThread().getName(),i,(end-start)/1000);
+        }
 
         @Override
         public void run() {
@@ -241,6 +241,7 @@ public class ReadFile {
         if (exchange.getStatusCode() != HttpStatus.OK) {
             return null;
         }
+
         List<String> list = (List<String>) JSON.parseObject(exchange.getBody()).get("metadata");
         return list;
 
